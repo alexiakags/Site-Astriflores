@@ -1,6 +1,6 @@
 # 🌱 Site Astriflores
 
-Site institucional e página de doações da **Astriflores** (Associação de Florestal - MG), desenvolvido com React, Vite e Materialize CSS.
+Site institucional e plataforma de doações da **Astriflores** (Associação de Florestal - MG), desenvolvido com React, Vite e Materialize CSS.
 
 ---
 
@@ -70,10 +70,19 @@ Caso apareça o erro *"a execução de scripts foi desabilitada neste sistema"* 
 
 ```text
 site-astriflores/
-├── public/          # Imagens, ícones e arquivos estáticos
-├── src/             # Código-fonte da aplicação (componentes, páginas e estilos)
-│   ├── App.jsx      # Componente principal
-│   └── main.jsx     # Ponto de entrada do React
-├── index.html       # Arquivo HTML base
-└── package.json     # Dependências e scripts do projeto
+├── public/                 # Imagens, ícones e arquivos estáticos (logo, hero, luva)
+├── src/                    # Código-fonte da aplicação
+│   ├── App.jsx             # Componente principal e navegação
+│   ├── main.jsx            # Ponto de entrada do React
+│   ├── SiteHeader.jsx      # Barra de navegação superior
+│   ├── SiteFooter.jsx      # Rodapé com informações de contato
+│   ├── Doacoes.jsx         # Página de listagem de itens para doação
+│   ├── CardDoacao.jsx      # Card individual de cada item
+│   ├── DetalheDoacao.jsx   # Tela de detalhes do item selecionado
+│   ├── PopupQRCode.jsx     # Modal de doação via PIX / QR Code
+│   ├── PopupEmail.jsx      # Modal de contato/confirmação por e-mail
+│   ├── itensDoacao.js      # Dados dos itens disponíveis para doação
+│   └── *.css               # Folhas de estilo dos componentes e páginas
+├── index.html              # Arquivo HTML base
+└── package.json            # Dependências e scripts do projeto
 ```
