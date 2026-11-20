@@ -1,83 +1,18 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useState } from 'react';
+import Doacoes from './Doacoes.jsx';
+import DetalheDoacao from './DetalheDoacao.jsx';
+import SiteHeader from './SiteHeader.jsx';
+import SiteFooter from './SiteFooter.jsx';
 
-function App() {
-  const sidenavRef = useRef(null);
-
-  useEffect(() => {
-    if (!window.M || !sidenavRef.current) return;
-
-    const sidenav = window.M.Sidenav.init(sidenavRef.current);
-
-    return () => {
-      sidenav.destroy();
-    };
-  }, []);
-
+function HomePage({ onNavigate }) {
   return (
     <>
-      <header>
-        <nav className="astriflores-nav">
-          <div className="nav-wrapper site-container">
-            <a href="#inicio" className="brand-logo">
-              <img src="/assets/logo.svg" alt="Logo Astriflores" />
-              <span>Astriflores</span>
-            </a>
+      <SiteHeader onNavigate={onNavigate} />
 
-            <a
-              href="#"
-              data-target="mobile-menu"
-              className="sidenav-trigger"
-              aria-label="Abrir menu"
-            >
-              <i className="material-icons">menu</i>
-            </a>
-
-            <ul className="right hide-on-med-and-down nav-links">
-              <li>
-                <a href="#sobre">Sobre nós</a>
-              </li>
-              <li>
-                <a href="#historia">Nossa História</a>
-              </li>
-              <li>
-                <a href="#contato">Contato</a>
-              </li>
-              <li>
-                <a href="/doacoes.html" className="doe-nav">
-                  Doe
-                </a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-
-        <ul
-          className="sidenav"
-          id="mobile-menu"
-          ref={sidenavRef}
-        >
-          <li>
-            <a href="#sobre">Sobre nós</a>
-          </li>
-          <li>
-            <a href="#historia">Nossa História</a>
-          </li>
-          <li>
-            <a href="#contato">Contato</a>
-          </li>
-          <li>
-            <a href="/doacoes.html">Doe</a>
-          </li>
-        </ul>
-      </header>
-
-      <main id="inicio">
-        <section
-          id="sobre"
-          className="section-block site-container"
-        >
-          <div className="row hero-row">
-            <div className="col s12 l7 hero-copy">
+      <main id="inicio" className="home-page">
+        <section id="sobre" className="home-section site-container">
+          <div className="home-hero">
+            <div className="home-copy">
               <div className="eyebrow">
                 <span></span>
                 <strong>SOBRE NÓS</strong>
@@ -106,56 +41,25 @@ function App() {
               </p>
 
               <div className="hero-actions">
-                <a
-                  className="btn astri-btn"
-                  href="#historia"
-                >
-                  Nossa História
-                </a>
-
-                <a
-                  className="btn astri-btn"
-                  href="/doacoes.html"
-                >
-                  Ajude a nossa associação
-                </a>
+                <button type="button" className="btn astri-btn" onClick={() => onNavigate('/doacoes')}>
+                  Ajude nossa associação
+                </button>
               </div>
             </div>
 
-            <div className="col s12 l5">
-              <div
-                className="media-placeholder"
-                aria-label="Espaço reservado para vídeo ou imagem da Astriflores"
-              >
-                <div className="placeholder-copy">
-                  Imagem / vídeo da Astriflores
-                </div>
-
-                <button
-                  className="play-button"
-                  type="button"
-                  aria-label="Reproduzir vídeo"
-                >
-                  <i className="material-icons">
-                    play_arrow
-                  </i>
-                </button>
-              </div>
+            <div className="media-panel hero-panel" aria-label="Imagem da Astriflores">
+              <button className="play-button" type="button" aria-label="Reproduzir vídeo">
+                <i className="material-icons">play_arrow</i>
+              </button>
             </div>
           </div>
         </section>
 
-        <section
-          id="historia"
-          className="history-section site-container"
-        >
-          <div className="section-title">
-            <h2>Nossa História</h2>
-            <span></span>
-          </div>
+        <section id="historia" className="history-section site-container">
+          <h2 className="history-title">Nossa História</h2>
 
-          <div className="row history-row">
-            <div className="col s12 l7 history-copy">
+          <div className="history-block">
+            <div className="story-copy">
               <article>
                 <h3>Criação</h3>
 
@@ -173,24 +77,21 @@ function App() {
 
                 <ul className="history-list">
                   <li>
-                    <strong>
-                      Primeiros anos (2008–2013):
-                    </strong>{' '}
+                    <strong>Primeiros anos (2008–2013):</strong>{' '}
                     Funcionava sob gestão compartilhada entre
-                    trabalhadores associados e funcionários
-                    públicos cedidos pela prefeitura. A usina
-                    recebia cerca de 7 toneladas diárias de
-                    resíduos sem separação prévia.
+                    trabalhadores associados e funcionários públicos
+                    cedidos pela prefeitura. A usina recebia cerca de
+                    7 toneladas diárias de resíduos sem separação
+                    prévia.
                   </li>
 
                   <li>
-                    <strong>Após 2014/2015:</strong> Em parceria
-                    com a Universidade Federal de Viçosa (UFV) e
+                    <strong>Após 2014/2015:</strong> Em parceria com
+                    a Universidade Federal de Viçosa (UFV) e
                     articulação com a prefeitura, rejeitos e lixo
                     orgânico passaram a ir direto para o aterro
                     municipal. A usina passou a receber apenas
-                    materiais recicláveis nas terças e
-                    quintas-feiras.
+                    materiais recicláveis nas terças e quintas-feiras.
                   </li>
                 </ul>
               </article>
@@ -206,65 +107,45 @@ function App() {
               </article>
             </div>
 
-            <div className="col s12 l5">
-              <div
-                className="media-placeholder history-media"
-                aria-label="Espaço reservado para vídeo ou imagem da história da Astriflores"
-              >
-                <div className="placeholder-copy">
-                  Imagem / vídeo da história
-                </div>
-
-                <button
-                  className="play-button"
-                  type="button"
-                  aria-label="Reproduzir vídeo"
-                >
-                  <i className="material-icons">
-                    play_arrow
-                  </i>
-                </button>
-              </div>
+            <div className="media-panel history-panel" aria-label="Imagem da história da Astriflores">
+              <button className="play-button" type="button" aria-label="Reproduzir vídeo">
+                <i className="material-icons">play_arrow</i>
+              </button>
             </div>
           </div>
         </section>
       </main>
 
-      <footer
-        id="contato"
-        className="page-footer astriflores-footer"
-      >
-        <div className="site-container footer-content">
-          <h3>Contato</h3>
-
-          <p>
-            <i className="material-icons">mail_outline</i>
-            <a href="mailto:associacao.astriflores@gmail.com">
-              associacao.astriflores@gmail.com
-            </a>
-          </p>
-
-          <p>
-            <i className="material-icons">phone_iphone</i>
-            <a href="tel:+5531999174714">
-              (31) 99917-4714
-            </a>
-          </p>
-
-          <p>
-            <i className="material-icons">location_on</i>
-            R. Chicó Alves - Bairro Pernambuco, Florestal - MG,
-            35690-000
-          </p>
-
-          <p>
-            <i className="material-icons">photo_camera</i>
-            @aastriflores
-          </p>
-        </div>
-      </footer>
+      <SiteFooter />
     </>
   );
+}
+
+function App() {
+  const [currentPath, setCurrentPath] = useState(() => window.location.pathname || '/');
+
+  useEffect(() => {
+    const handlePopState = () => setCurrentPath(window.location.pathname || '/');
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  const navigateTo = (path) => {
+    window.history.pushState({}, '', path);
+    setCurrentPath(path);
+    window.scrollTo(0, 0);
+  };
+
+  if (currentPath.startsWith('/doacoes/')) {
+    const itemId = currentPath.split('/')[2];
+    return <DetalheDoacao itemId={itemId} onNavigate={navigateTo} />;
+  }
+
+  if (currentPath === '/doacoes') {
+    return <Doacoes onNavigate={navigateTo} />;
+  }
+
+  return <HomePage onNavigate={navigateTo} />;
 }
 
 export default App;
