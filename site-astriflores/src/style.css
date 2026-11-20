@@ -1,14 +1,16 @@
 :root {
-  --green: #3b7e3b;
-  --green-deep: #2d6a2f;
-  --green-soft: #dfeadf;
-  --brown: #7a3c20;
-  --brown-dark: #5b2b16;
-  --ink: #1f1f1f;
-  --muted: #6a6a6a;
-  --line: #d6d6d6;
-  --cream: #f9fbf7;
-  --page-bg: #f5f5f3;
+  --green: #6FAE44;
+  --green-dark: #4F7F3C;
+  --green-darker: #26352A;
+  --green-soft: #A7D85C;
+  --brown: #6B3A1F;
+  --white: #fff;
+  --pink: #F47F8D;
+  --ink: #000000;
+  --muted: #6A6A6A;
+  --line: #D6D6D6;
+  --cream: #F4F8ED;
+  --page-bg: #F5F5F3;
 }
 
 html { scroll-behavior: smooth; }
@@ -34,12 +36,12 @@ body {
 }
 
 .home-page {
-  background: #f3f3f3;
+  background: var(--page-bg);
   padding-bottom: 12px;
 }
 
 .astriflores-nav {
-  background: var(--green);
+  background: var(--green-dark);
   height: 86px;
   line-height: 86px;
   box-shadow: none;
@@ -90,7 +92,7 @@ body {
 .nav-links a {
   font-size: 1rem;
   font-weight: 600;
-  color: #fff;
+  color: var(--white);
 }
 
 .nav-links .doe-nav,
@@ -98,13 +100,13 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #1e2d21;
+  color: var(--green-darker);
   background: var(--cream);
-  border: 2px solid #203324;
+  border: 2px solid var(--green-darker);
   border-radius: 30px;
   height: 50px;
   padding: 0 34px;
-  margin-left: 52px;
+  margin-left: 0;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
   font-weight: 600;
@@ -118,7 +120,7 @@ body {
 .nav-links .doe-nav:focus,
 .side-doe-btn:hover,
 .side-doe-btn:focus {
-  background: #eaf3e2;
+  background: var(--pink);
 }
 
 .side-doe-btn {
@@ -197,7 +199,7 @@ h1 {
 
 .astri-btn {
   background: var(--brown);
-  color: #fff;
+  color: var(--white);
   text-transform: none;
   box-shadow: none;
   border-radius: 4px;
@@ -209,7 +211,7 @@ h1 {
 
 .astri-btn:hover,
 .astri-btn:focus {
-  background: var(--brown-dark);
+  background: color-mix(in srgb, var(--brown) 85%, var(--ink));
   box-shadow: none;
 }
 
@@ -221,7 +223,7 @@ h1 {
   overflow: hidden;
   background-size: cover;
   background-position: center;
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--ink) 5%, transparent);
 }
 
 .hero-panel {
@@ -241,11 +243,11 @@ h1 {
   height: 72px;
   border: 0;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.9);
+  background: color-mix(in srgb, var(--white) 90%, transparent);
   color: var(--ink);
   display: grid;
   place-items: center;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 3px 12px color-mix(in srgb, var(--ink) 18%, transparent);
   cursor: pointer;
 }
 
@@ -292,21 +294,21 @@ h1 {
 }
 
 .astriflores-footer {
-  background: var(--green);
+  background: var(--green-dark);
   padding: 0;
   min-height: 240px;
 }
 
 .footer-content {
   padding: 46px 0 42px;
-  color: #fff;
+  color: var(--white);
 }
 
 .footer-content h3 {
   font-size: 1.45rem;
   font-weight: 700;
   margin: 0 0 18px;
-  color: #fff;
+  color: var(--white);
 }
 
 .footer-content p {
@@ -315,7 +317,7 @@ h1 {
   gap: 14px;
   margin: 10px 0;
   font-size: 1rem;
-  color: #fff;
+  color: var(--white);
 }
 
 .footer-content i {
@@ -324,13 +326,13 @@ h1 {
 }
 
 .footer-content a {
-  color: #fff;
+  color: var(--white);
   text-decoration: none;
 }
 
 .footer-content a:hover,
 .footer-content a:focus {
-  color: #fff;
+  color: var(--white);
   text-decoration: underline;
 }
 
