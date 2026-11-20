@@ -1,6 +1,6 @@
 .pagina-detalhe-doacao {
   min-height: 100vh;
-  background: #fff;
+  background: var(--white);
 }
 
 .detalhe-doacao {
@@ -29,21 +29,26 @@
 }
 
 .detalhe-doacao-info {
-  color: #26352b;
+  color: var(--green-darker);
 }
 
 .detalhe-doacao-info h1 {
   margin: 0 0 20px;
-  color: #26352b;
-  font-size: clamp(2.8rem, 6vw, 4.2rem);
+  color: var(--green-darker);
+  font-size: clamp(1.8rem, 4.2vw, 2.7rem);
   line-height: 1.05;
   font-weight: 700;
+  text-align: center;
 }
 
 .detalhe-doacao-descricao,
 .detalhe-doacao-especificacao {
-  font-size: 1.15rem;
+  font-size: 1rem;
   line-height: 1.6;
+  background: var(--cream);
+  border-radius: 22px;
+  padding: 14px 18px;
+  margin: 0 0 12px;
 }
 
 .detalhe-doacao-especificacao p {
@@ -51,7 +56,7 @@
 }
 
 .detalhe-doacao-especificacao ul {
-  margin: 0 0 0 28px;
+  margin: 4px 0 0 24px;
   padding: 0;
   list-style: disc;
 }
@@ -63,28 +68,28 @@
 .detalhe-doacao-valor {
   margin: 14px 0 8px;
   text-align: center;
-  font-size: clamp(2.7rem, 6vw, 4.1rem);
+  font-size: clamp(1.2rem, 2.8vw, 1.8rem);
   line-height: 1.15;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .gerar-qr-btn {
   display: block;
-  width: min(100%, 290px);
+  width: min(100%, 240px);
   height: 82px;
   margin: 12px auto 0;
   border-radius: 22px;
-  background: #7a3c20;
-  color: #fff;
+  background: var(--brown);
+  color: var(--white);
   text-transform: none;
-  font-size: 1.15rem;
+  font-size: 1.4rem;
   font-weight: 600;
   box-shadow: none;
 }
 
 .gerar-qr-btn:hover,
 .gerar-qr-btn:focus {
-  background: #653017;
+  background: color-mix(in srgb, var(--brown) 85%, var(--ink));
   box-shadow: none;
 }
 
@@ -103,7 +108,7 @@
 }
 
 .voltar-doacoes {
-  background: #7a3c20;
+  background: var(--brown);
   text-transform: none;
   box-shadow: none;
 }

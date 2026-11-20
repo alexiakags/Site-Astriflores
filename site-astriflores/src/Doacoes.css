@@ -1,16 +1,8 @@
-/* Variáveis de cores baseadas no layout */
-:root {
-  --verde-astriflores: #4f773d;
-  --marrom-card: #633722;
-  --branco: #ffffff;
-  --texto-escuro: #1e1e1e;
-}
-
 .pagina-doacoes {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: var(--branco);
+  background-color: var(--white);
 }
 
 .row {
@@ -34,7 +26,7 @@
 
 .titulo-doacoes {
   font-weight: 600;
-  color: var(--texto-escuro);
+  color: var(--ink);
   margin-bottom: 30px;
   margin-left: 10px;
 }
@@ -62,11 +54,11 @@
   max-width: 250px;
   height: 100%;
   min-height: 290px;
-  background: linear-gradient(180deg, #7a3e22 0%, #643622 100%);
+  background: linear-gradient(180deg, var(--brown) 0%, color-mix(in srgb, var(--brown) 85%, var(--ink)) 100%);
   border-radius: 18px;
   padding: 16px 16px 14px;
   margin: 0;
-  box-shadow: 0 8px 16px rgba(66, 28, 14, 0.18);
+  box-shadow: 0 8px 16px color-mix(in srgb, var(--brown) 45%, transparent);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
   text-decoration: none;
@@ -74,7 +66,7 @@
 
 .card-doacao:hover {
   transform: translateY(-5px);
-  box-shadow: 0 14px 28px rgba(53, 24, 12, 0.22);
+  box-shadow: 0 14px 28px color-mix(in srgb, var(--brown) 55%, transparent);
 }
 
 .card-doacao:visited {
@@ -82,12 +74,12 @@
 }
 
 .card-doacao:focus-visible {
-  outline: 3px solid rgba(255, 255, 255, 0.8);
+  outline: 3px solid color-mix(in srgb, var(--white) 80%, transparent);
   outline-offset: 4px;
 }
 
 .card-doacao-img-box {
-  background: linear-gradient(135deg, #f8f3ee 0%, #ffffff 100%);
+  background: linear-gradient(135deg, var(--cream) 0%, var(--white) 100%);
   border-radius: 12px;
   width: 210px;
   max-width: 100%;
@@ -129,7 +121,7 @@
   flex: 1;
   flex-direction: column;
   justify-content: center;
-  color: var(--branco);
+  color: var(--white);
   min-width: 0;
 }
 
@@ -137,7 +129,7 @@
   padding: 0;
   border: 0;
   background: transparent;
-  color: #fff;
+  color: var(--white);
   text-align: left;
   font-size: 1rem;
   font-weight: 700;
@@ -153,8 +145,8 @@
 }
 
 .btn-doar-card {
-  background-color: #f5f1ec;
-  color: var(--texto-escuro);
+  background-color: var(--cream);
+  color: var(--ink);
   border: none;
   border-radius: 999px;
   padding: 8px 16px;
@@ -162,20 +154,20 @@
   font-size: 0.8rem;
   cursor: pointer;
   transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 10px color-mix(in srgb, var(--ink) 8%, transparent);
 }
 
 .btn-doar-card:hover,
 .btn-doar-card:focus {
-  background-color: #ffffff;
+  background-color: var(--white);
   transform: translateY(-1px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 6px 12px color-mix(in srgb, var(--ink) 12%, transparent);
 }
 
 /* --- FOOTER --- */
 .footer-astriflores {
-  background-color: var(--verde-astriflores);
-  color: var(--branco);
+  background-color: var(--green-dark);
+  color: var(--white);
   padding: 35px 0;
   margin-top: auto;
 }
@@ -205,7 +197,7 @@
 .footer-lista a:hover,
 .footer-lista a:focus,
 .footer-lista a:active {
-  color: #fff !important;
+  color: var(--white) !important;
   text-decoration: none;
 }
 

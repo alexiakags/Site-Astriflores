@@ -5,7 +5,7 @@
   display: grid;
   place-items: center;
   padding: 18px;
-  background: rgb(24 34 27 / 55%);
+  background: color-mix(in srgb, var(--green-darker) 55%, transparent);
 }
 
 .popup-doacao {
@@ -14,9 +14,9 @@
   box-sizing: border-box;
   padding: 38px 42px 32px;
   border-radius: 22px;
-  background: #fff;
-  color: #20202d;
-  box-shadow: 0 12px 40px rgb(0 0 0 / 20%);
+  background: var(--white);
+  color: var(--ink);
+  box-shadow: 0 12px 40px color-mix(in srgb, var(--ink) 20%, transparent);
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -24,23 +24,25 @@
   position: absolute;
   top: 14px;
   right: 14px;
-  display: grid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 30px;
   height: 30px;
-  place-items: center;
   padding: 0;
   border: 0;
   border-radius: 50%;
-  background: #4f813c;
-  color: #fff;
-  font-size: 24px;
-  line-height: 1;
+  background: var(--green-dark);
+  color: var(--white);
+  font-size: 22px;
+  line-height: 0;
   cursor: pointer;
+  padding-bottom: 4px;
 }
 
 .popup-doacao h2 {
   margin: 0 24px 28px;
-  color: #20202d;
+  color: var(--ink);
   text-align: center;
   font-size: clamp(1.2rem, 3vw, 1.65rem);
   line-height: 1.3;
@@ -60,10 +62,10 @@
   height: 42px;
   box-sizing: border-box;
   padding: 0 12px;
-  border: 1px solid #777;
+  border: 1px solid var(--muted);
   border-radius: 7px;
-  background: #fff;
-  color: #26352b;
+  background: var(--white);
+  color: var(--green-darker);
   font: inherit;
 }
 
@@ -73,8 +75,8 @@
 
 .popup-email input:focus,
 .chave-pix-copiar input:focus {
-  border-color: #4f813c;
-  outline: 2px solid rgb(79 129 60 / 20%);
+  border-color: var(--green-dark);
+  outline: 2px solid color-mix(in srgb, var(--green-dark) 20%, transparent);
 }
 
 .popup-avancar {
@@ -83,8 +85,8 @@
   padding: 0 20px;
   border: 0;
   border-radius: 24px;
-  background: #4f813c;
-  color: #fff;
+  background: var(--green-dark);
+  color: var(--white);
   font: inherit;
   font-weight: 600;
   cursor: pointer;
@@ -92,7 +94,7 @@
 
 .popup-avancar:hover,
 .popup-fechar:hover {
-  background: #3c682e;
+  background: var(--green-darker);
 }
 
 .popup-qr h2 {
@@ -108,9 +110,9 @@
   align-items: center;
   justify-content: center;
   gap: 4px;
-  border: 1px solid #aeb8af;
-  background: #fbfcfb;
-  color: #526357;
+  border: 1px solid var(--line);
+  background: var(--white);
+  color: var(--muted);
   text-align: center;
   font-size: 0.75rem;
 }
@@ -127,7 +129,7 @@
   max-width: 400px;
   margin: 0 auto;
   padding: 4px 6px;
-  border: 1px solid #26352b;
+  border: 1px solid var(--green-darker);
   border-radius: 8px;
 }
 
@@ -151,7 +153,7 @@
   place-items: center;
   border: 0;
   background: transparent;
-  color: #26352b;
+  color: var(--green-darker);
   cursor: pointer;
 }
 
@@ -159,14 +161,14 @@
 .aviso-qr {
   min-height: 1.2em;
   margin: 6px 0 0;
-  color: #3c682e;
+  color: var(--green-darker);
   text-align: center;
   font-size: 0.8rem;
 }
 
 .aviso-qr {
   margin-top: 10px;
-  color: #606860;
+  color: var(--muted);
   font-size: 0.75rem;
 }
 

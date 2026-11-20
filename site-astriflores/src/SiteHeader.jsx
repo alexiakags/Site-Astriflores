@@ -36,7 +36,7 @@ export default function SiteHeader({ onNavigate }) {
             <i className="material-icons">menu</i>
           </a>
 
-          <ul className="right hide-on-med-and-down nav-links">
+          <ul className="hide-on-med-and-down nav-links">
             <li><a href={sectionHref('sobre')}>Sobre nós</a></li>
             <li><a href={sectionHref('historia')}>Nossa História</a></li>
             <li><a href={sectionHref('contato')}>Contato</a></li>
